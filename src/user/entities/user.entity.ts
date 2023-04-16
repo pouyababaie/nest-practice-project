@@ -1,19 +1,53 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
-    id: number
-
+    id: number;
+   
     @Column()
-    firstName: string
-
+    email: string;
+   
     @Column()
-    lastName: string
-
+    mobile: string;
+   
     @Column()
-    age: number
-
+    weight: number;
+   
     @Column()
-    phoneNumber: string
+    height: number;
+  
+    @Column()
+    bmi: number;
+ 
+    @Column()
+    bmiResult: string;
+  
+    @Column()
+    gender: string;
+   
+    @Column()
+    requireTrainer: string;
+   
+    @Column()
+    package: string;
+
+    // @Column()
+    // important: string[];
+   
+    @Column()
+    haveGymBefore: boolean;
+   
+    @Column()
+    enquireDate: string;
+    
+    @Column()
+    firstName: string;
+    
+    @Column()
+    lastName: string;
+    
+    // @Column()
+    // age: number;
+ 
 }

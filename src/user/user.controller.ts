@@ -18,30 +18,30 @@ import { ApiTags } from '@nestjs/swagger';
 @ApiTags('Users')
 @Controller('users')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
 
-  @Post()
-  create(@Body() user: User): Observable<any> {
+  @Post('postRegistration')
+  postRegistration(@Body() user: CreateUserDto): Observable<any> {
     return this.userService.create(user);
   }
 
-  @Get()
-  findAll(): Observable<User[]> {
+  @Get('getRegisterUser')
+  getRegisterUser(): Observable<User[]> {
     return this.userService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: number): Observable<User> {
+  @Get('getRegisterUserId/:id')
+  getRegisterUserId(@Param('id') id: number): Observable<User> {
     return this.userService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: number, @Body() user: User): Observable<any> {
+  @Patch('updateUser/:id')
+  updateRegisterUser(@Param('id') id: number, @Body() user: UpdateUserDto): Observable<any> {
     return this.userService.update(+id, user);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: number): Observable<any> {
+  @Delete('deleteRegisterd/:id')
+  deleteRegisterd(@Param('id') id: number): Observable<any> {
     return this.userService.remove(+id);
   }
 }
